@@ -1,0 +1,2 @@
+Generate a concise and relevant subject line based on the email body and context.
+The subject should reflect the main purpose of the email and match the requested tone and style.

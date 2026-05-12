@@ -1,0 +1,3 @@
+Generate a complete email from the user's request.
+Write a relevant subject line and a full body with greeting, message, and sign-off.
+Keep the email clear, practical, and aligned with the requested tone and style.
