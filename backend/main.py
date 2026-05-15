@@ -5,6 +5,7 @@ from typing import Literal
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, ConfigDict, Field, field_validator
+from fastapi.middleware.cors import CORSMiddleware
 
 from backend.services.llm_service import get_llm
 from backend.services.prompt_factory import PromptFactory
@@ -12,6 +13,21 @@ from backend.services.prompt_factory import PromptFactory
 load_dotenv()
 
 app = FastAPI(title="Smart Email Generator", version="1.0.0")
+
+origins = [
+    "http://localhost:5173",
+    "http://localhost:3000"
+
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins = origins,   #for frontend ports.
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 prompt_factory = PromptFactory()
 llm = get_llm()
 
