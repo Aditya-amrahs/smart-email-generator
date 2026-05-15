@@ -31,6 +31,7 @@ jobs:
           app_location: "./frontend" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "dist" # Built app content directory - optional
+          app_build_command: "VITE_API_URL=https://smart-email-dxfeazg3etc2ena7.southindia-01.azurewebsites.net npm run build"
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
