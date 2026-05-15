@@ -5,6 +5,7 @@ from typing import Literal
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, ConfigDict, Field, field_validator
+from fastapi.middleware.cors import CORSMiddleware
 
 from backend.services.llm_service import get_llm
 from backend.services.prompt_factory import PromptFactory
